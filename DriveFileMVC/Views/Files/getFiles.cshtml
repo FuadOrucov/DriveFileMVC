@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DriveFileMVC.Models.Tbl_Files>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>@ViewBag.msj</h2>*@
+
+<p style="font-size:26px ; color:red">
+   Get files web api 
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegDate)
+        </th>
+        <th>Download</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.RegDate)
+            </td>
+            <td>
+                @Html.ActionLink("Download", "DownloadFile", new { fileName = item.FileName })
+            </td>
+        </tr>
+    }
+
+</table>
