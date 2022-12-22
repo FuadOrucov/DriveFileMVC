@@ -102,7 +102,8 @@ namespace DriveFile.Controllers
             }
             catch (Exception)
             {
-                throw;
+                ViewBag.msj = "Choose file !!!";
+                return View();
             }
         }
 

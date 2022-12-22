@@ -6,6 +6,7 @@
 }
 
 <h2>Download</h2>
+<h2 style="color:red">@ViewBag.msj</h2>
 
 @using (Html.BeginForm("Create", "Files", new { mail = @HttpContext.Current.User.Identity.Name }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
